@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var e="2010-10-20";
+        var n="2010-10-19";
+        var t="2010-10-25";
+        var h=true;
+        function isBetween(a,b,c){
+            var q=0;
+            var m=a.split("-");
+            var q=Number(m[0])*365+Number(m[1]-1)*30+Number(m[2]);
+            var s=0;
+            var y=b.split("-");
+            var s=Number(y[0])*365+Number(y[1]-1)*30+Number(y[2]);
+            var v=0;
+            var x=c.split("-");
+            var v=Number(x[0])*365+Number(x[1]-1)*30+Number(x[2]);
+            if(q>=s && q<=v){
+                h=true;
+            } else if(q<=s && q>=v) {
+                h=true;
+            } else {
+                h=false;
+            }
+            return h;
+        }
+        document.write(isBetween(e,n,t));
+    </script>
+</head>
+<body>
+    "2010-10-20""2010-10-19""2010-10-25"
+</body>
+</html>

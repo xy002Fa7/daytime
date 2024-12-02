@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    var a="2010-01-01";
+        function dayOfYear(c){
+            var v=0;
+            var x=c.split("-");
+            var v=Number(x[1]-1)*30+Number(x[2]);
+            return v;
+        }
+        document.write(dayOfYear(a));
+    </script>
+</head>
+<body>
+    "2010-01-01"
+</body>
+</html>

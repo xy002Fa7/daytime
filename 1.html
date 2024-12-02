@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var time=new Date();
+        var d=time.getTime();
+        //document.write(d+"<br />");
+        function add (a,b,c) {
+            var v=0;
+            var c0=c.indexOf(" ");
+            var c1=c.slice(0,c0);
+            var c2=c.slice(c0,c.length);
+            var x1=c1.split("/");
+            var x2=c2.split(":");
+            var v=(Number(x1[0])-1970)*31536000000+Number(x1[1])*2592000000+Number(x1[2])*86400000+Number(x2[0])*3600000+Number(x2[1])*60000+Number(x2[2])*1000;
+            if(c!=undefined){
+                d=v;
+            }
+
+            switch(b){
+                case "day":d+=(a*86400000);break;
+                case "week":d+=(a*604800000);break;
+                case "hour":d+=(a*3600000);break;
+                case "minute":d+=(a*60000);break;
+                case "second":d+=(a*1000);break;
+                case "millisecond":d+=a;break;
+            }
+            var date = new Date(d);
+            Y = date.getFullYear() + '/';
+            M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '/';
+            D = date.getDate() + ' ';
+            h = date.getHours() + ':';
+            m = date.getMinutes() + ':';
+            s = date.getSeconds();
+            t=Y+M+D+h+m+s;
+            return t;
+        }
+        //document.write(add(7,"day",));
+        document.write(add(7, "day", "2024/10/8 12:00:23"))
+    </script>
+</head>
+<body>
+    7, "day", "2024/10/8 12:00:23"
+</body>
+</html>
